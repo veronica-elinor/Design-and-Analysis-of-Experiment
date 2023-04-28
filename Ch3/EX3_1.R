@@ -24,6 +24,20 @@ data_csv
 outfile=paste(dir,"EX3_1(coding).csv",sep="");outfile
 write.csv(data_csv,file=outfile,row.names=FALSE)
 
-#
-class(data_csv)
-class(data_csv$RF)
+#data type
+class(data_csv) #data.frame
+class(data_csv$RF) #integer
+
+#casting
+data_csv$RF=as.factor(data_csv$RF) #The data type of RF should be factor in ANOVA
+class(data_csv$RF) #factor
+
+fit=aov(Y~RF, data=data_csv)
+summary(fit) #print the result
+
+fitcoding=aov(coding_Y~RF, data=data_csv)
+summary(fitcoding)
+plot(fit) #four graphs(each graph a page)
+par(mfrow=c(2,2)) #four graphs in a page
+
+
