@@ -40,4 +40,24 @@ summary(fitcoding)
 plot(fit) #four graphs(each graph a page)
 par(mfrow=c(2,2)) #four graphs in a page
 
+#Bartlett’s test
+bartlett.test(Y~RF, data=data_csv)
+plot(fit)
 
+#install package agricolae
+install.packages("agricolae")
+library(agricolae) #check if it is install
+
+#LSD
+LD <- LSD.test(fit, "RF", p.adj = "none" ) #"<-" assign operator #p value adjust #"RF" the factor
+LD
+LD$groups #print result
+plot(LD)
+
+#Tukey
+HSD=HSD.test(fit, "RF", group=TRUE)
+HSD
+plot(HSD)
+TK=TukeyHSD(fit)
+TK
+plot(TK)
