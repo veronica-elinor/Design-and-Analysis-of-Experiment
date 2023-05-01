@@ -32,6 +32,7 @@ class(data_csv$RF) #integer
 data_csv$RF=as.factor(data_csv$RF) #The data type of RF should be factor in ANOVA
 class(data_csv$RF) #factor
 
+#ANOVA
 fit=aov(Y~RF, data=data_csv)
 summary(fit) #print the result
 
