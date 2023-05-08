@@ -1,2 +1,2 @@
-# R-for-Design-and-Analysis-of-Experiment
+# Design-and-Analysis-of-Experiment
 As Title
